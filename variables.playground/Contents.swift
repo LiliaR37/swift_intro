@@ -19,6 +19,17 @@ var 👽 = "Alien"
 👽 = "Alien2"
 print(👽)
 
+print("El numero de login actual es: \(currentLoginAttemp) de un total disponible de: \(maximumNumberOfLoginAttemps)")
+
+
+
+red = 1.2
+green = 2.3
+blue = 3.3
+
+print(red, green,blue, separator: ", ", terminator: ".")
+
+/* Esto es un comentario de prueba jeje*/
 
 
 
