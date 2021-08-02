@@ -67,3 +67,18 @@ do{
     //tengo hambre -> Esperar a tener hambre
         print("Esperar a tener hambre")
 }
+
+// Aserciones (debug) y Preciondiciones (build)
+let age = -5
+//assert(age>=0, "La edad de una persona no puede ser negativa")
+precondition(age>=0, "La edad de una persona no puede ser negativa")
+//... aquí el código sigue
+
+
+if age > 10 {
+    print("Puedes subir a la montaña rusa")
+}else if age >= 0{
+    print("Eres demasiado pequeño para subir a la montaña rusa")
+}else{
+    assertionFailure("La edad de una persona no puede ser negativa")
+}
