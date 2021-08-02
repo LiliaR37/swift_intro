@@ -103,4 +103,22 @@ let actualAge = 23
 
 actualAge > age ? print("Yes, you can enter") : print("Sorry, you are too young ")
 
+//Operador Nil Coalescing
+let defaultAge = 18
+var userAge: Int?
+var ageToBeUsed = userAge ?? defaultAge
+// ageToBeUsed = (userAge != nil ? userAge! : defaultAge)
+
+let defaultColorName = "red"
+var userColorName: String?
+
+var colorNameToUse = userColorName ?? defaultColorName
+
+
+let defaultName = "Lady Gaga"
+var userName: String?
+
+var userNameToBeUsed = userName ?? defaultName
+
+
 
