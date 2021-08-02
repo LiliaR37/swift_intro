@@ -74,3 +74,33 @@ if name == "Juan Gabriel" {
 (28,"Andrea Ruiz") > (31, "Juan Gabriel")
 (28,"Andrea Ruiz") == (31, "Juan Gabriel")
 
+//Operaciones ternarias
+
+/*
+ if question {
+    answer1
+ } else{
+    answer2
+ }
+ */
+
+let contentHeight = 40
+let hasImage = false
+var rowHeight = 0
+/*
+ 
+ if hasImage {
+     rowHeight = contentHeight + 50
+ } else {
+     rowHeight = contentHeight + 10
+ }
+ */
+
+rowHeight = contentHeight + (hasImage ? 50 : 10)
+
+let age = 18
+let actualAge = 23
+
+actualAge > age ? print("Yes, you can enter") : print("Sorry, you are too young ")
+
+
