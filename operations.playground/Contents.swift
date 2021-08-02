@@ -121,4 +121,43 @@ var userName: String?
 var userNameToBeUsed = userName ?? defaultName
 
 
+//Rangos
+//Closed Range Operator
+for index in 1...5 {
+    print("\(index) times 5 is \(index * 5)")
+}
+
+//Half-Open Range Operator
+for idx in 1..<5{
+    print(idx)
+}
+
+let names = ["Ricardo", "Hernan", "David","Luis"]
+for i in 0..<names.count {
+    print("La persona \(i+1) se llama \(names[i])")
+}
+
+//One-Sided Ranges
+
+for name in names[1...]{
+    print(name)
+}
+
+for name in names[..<2]{
+    print(name)
+}
+
+let range = ...5
+range.contains(7)
+range.contains(4)
+range.contains(-1)
+
+
+//Reto
+let foodMenu = ["Pizza","Hamburguesa","Arepa","Pasta","Milanesa"]
+
+for i in 0..<foodMenu.count {
+    print("Comida \(i+1): \(foodMenu[i])")
+}
+
 
