@@ -35,3 +35,14 @@ let alsoMinusSix = +minusSix
 var number = 5
 number += 3 //number = number + 3
 number -= 2 //number = number - 2
+
+
+//Comparacion
+1 == 1
+1 == 2
+1 != 2
+2 > 1
+2 < 1
+2 >= 1
+1 >= 1
+2 <= 1
