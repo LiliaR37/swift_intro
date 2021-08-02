@@ -46,3 +46,31 @@ number -= 2 //number = number - 2
 2 >= 1
 1 >= 1
 2 <= 1
+
+
+let name = "Juan Gabriel"
+if name == "Juan Gabriel" {
+    print("Bienvenido \(name), eres invitado a la fiesta")
+}else{
+    print("Cuidado, ha aparecido un \(name) salvaje")
+}
+
+
+//En tuplas
+
+(1, "Juan Gabriel") < (2, "Ricardo Celis")
+(3, "Juan Gabriel") < (3, "Ricardo Celis")
+(3, "Ricardo") < (3, "Juan Gabriel")
+(4, "perro") == (4, "perro")
+
+
+//No se pueden comparar
+//("perro", false) < ("perro", true)
+//Solo con igualdad
+("perro", false) == ("perro", true)
+
+//Reto
+(28,"Andrea Ruiz") < (31, "Juan Gabriel")
+(28,"Andrea Ruiz") > (31, "Juan Gabriel")
+(28,"Andrea Ruiz") == (31, "Juan Gabriel")
+
