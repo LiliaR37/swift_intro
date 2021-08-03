@@ -1,5 +1,7 @@
 import UIKit
 
+ 
+ 
 let someString = "Soy un string"
 
  
@@ -37,3 +39,69 @@ let greetings = """
     """
 
 print(greetings)
+
+//Empty Strings
+var emptyString = ""
+var anotherEmptyString = String()
+
+if emptyString.isEmpty {
+    print("Nada que ver por acá")
+}else {
+    print("El string tiene un valor")
+}
+
+//Agregar mas valores
+var newSomeString = "Un caballo"
+newSomeString += " y un carruaje"
+newSomeString += " y un soldado"
+
+var a = "A"
+var b = "B"
+print("a vale \(a) y b vale \(b) ")
+b = a
+print("a vale \(a) y b vale \(b) ")
+b = "C"
+print("a vale \(a) y b vale \(b) ")
+a = "D"
+print("a vale \(a) y b vale \(b) ")
+
+
+ //character
+ let fullName = "Andrea Ruiz 🤓"
+ for character in fullName {
+     print(character)
+ }
+
+ print(fullName.count)
+
+
+
+let exclamationMark: Character = "!"
+
+let nameChars: [Character] = ["J", "u", "a", "n"]
+//Pasarlo a String
+var nameString = String(nameChars)
+
+let compoundName = "Juan " + "Gabriel"
+
+//Agregar otro elemento
+nameString.append(exclamationMark)
+
+let multiplier = 3
+var message = "El producto de \(multiplier) x 3.5 da \(Double(multiplier)*3.5)"
+message.append(exclamationMark)
+
+//Reto 1
+
+let myNameCharacter: [Character] = ["A","n","d","r","e","a"]
+let myFlagCharacter: [Character] = ["\u{1F1FB}","\u{1F1EA}"]
+
+var myNameString = String(myNameCharacter)
+myNameString.append(String(myFlagCharacter))
+
+ //Reto 2
+let num = 5
+for i in 1...10 {
+    print("\(num) X \(i) = \(i*num) ")
+}
+
