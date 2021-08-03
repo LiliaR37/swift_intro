@@ -64,3 +64,29 @@ shoppingList
 //Para eliminar el primero o el ultimo
 let _ = shoppingList.removeLast() //removeFirst()
 shoppingList
+
+//Iterando en un array
+for item in shoppingList {
+    print(item)
+}
+
+//Iterando para saber la posicion por medio de una tupla
+for (index, item) in shoppingList.enumerated() {
+    print("Item \(index+1): \(item)")
+}
+
+
+//Reto
+var itemsStore :  [String] = ["Camisas", "Pantalones", "Faldas", "Remeras", "Pijamas"]
+
+if itemsStore.isEmpty {
+    print("No hay artículos en la tienda")
+} else{
+    itemsStore += ["Zapatillas","Bikinis"]
+   
+}
+
+for (index, item) in itemsStore.enumerated() {
+    print("Categorías \(index+1): \(item)")
+}
+
