@@ -1,7 +1,7 @@
 import UIKit
 
- 
- 
+
+
 let someString = "Soy un string"
 
  
@@ -105,3 +105,95 @@ for i in 1...10 {
     print("\(num) X \(i) = \(i*num) ")
 }
 
+ 
+
+let greeting = "Hola, ¿que tal?"
+greeting[greeting.startIndex]
+//greeting[greeting.endIndex]
+greeting[greeting.index(before: greeting.endIndex)]
+greeting[greeting.index(after: greeting.startIndex)]
+
+
+
+for idx in greeting.indices{
+    print("\(greeting[idx])", terminator:"")
+}
+
+//Insertar nuevo elemento
+var welcome = "Hola"
+welcome.insert("!", at: welcome.endIndex)
+
+//Insertar contenido en posicion concreta
+welcome.insert(contentsOf: " que tal",
+               at: welcome.index(before: welcome.endIndex))
+
+welcome.remove(at: welcome.index(before: welcome.endIndex))
+welcome
+
+let range = welcome.index(welcome.endIndex, offsetBy: -6)..<welcome.endIndex
+welcome.removeSubrange(range)
+welcome
+
+
+greeting
+let index = greeting.firstIndex(of: ",") ?? greeting.endIndex
+
+//Substring
+let firstPart = greeting[..<index]
+//Pasarlo siempre a String
+let newString = String(firstPart)
+
+//Prefijos y sufijos
+let newGreeting = "Hola, soy Juan Gabriel"
+newGreeting.hasPrefix("Hola")
+newGreeting.hasSuffix("chao")
+
+
+let collection = [
+    "Act 1 Scene 1","Act 1 Scene 2","Act 1 Scene 3","Act 1 Scene 4","Act 1 Scene 5",
+    "Act 2 Scene 1","Act 2 Scene 2","Act 2 Scene 3",
+    "Act 3 Scene 1","Act 3 Scene 2"
+]
+
+var act1SceneCount = 0
+for scene in collection{
+    if scene.hasPrefix("Act 1"){
+        act1SceneCount += 1
+    }
+}
+
+print("El número de escenas del acto 1 es: \(act1SceneCount)")
+
+let studentsList = [
+"David Rodriguez","Jose Perez","Amir Zapata","Luis Ramirez",
+"Carla Rodriguez", "Juan Perez", "Daniela Gonzales","Maria Diaz", "Gabriel Perez"
+]
+
+var lastNameCount = 0
+for students in studentsList {
+    if students.hasSuffix("Perez"){
+        lastNameCount += 1
+    }
+}
+
+print("Los estudiantes con el apellido Perez son: \(lastNameCount)")
+
+//Unicode
+let ghost = "¡¡Fantasma!! 👻"
+
+//Primero se usaba utf8
+for codeUnit in ghost.utf8{
+    print(codeUnit, terminator: " ")
+}
+
+//Luego utf16
+print(" ")
+for codeUnit in ghost.utf16{
+    print(codeUnit, terminator: " ")
+}
+
+//Ahota se usa unicode
+print(" ")
+for codeUnit in ghost.unicodeScalars{
+    print(codeUnit, terminator: " ")
+}
