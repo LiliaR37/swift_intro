@@ -5,6 +5,7 @@ import UIKit
 var someInts = [Int]()
 someInts.count
 someInts.append(25)
+
 //Contar cuantos elementos hay
 someInts.count
 
