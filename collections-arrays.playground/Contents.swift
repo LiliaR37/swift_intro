@@ -91,3 +91,50 @@ for (index, item) in itemsStore.enumerated() {
     print("Categorías \(index+1): \(item)")
 }
 
+
+//Conjuntos - sets
+var letters = Set<Character>()
+letters.count
+//Insertar en conjuntos
+letters.insert("a")
+letters.insert("h")
+letters.insert("b")
+letters
+
+//Inicializar y agregar
+var favouriteGames : Set<String> = ["Final Fantasy", "World of Warcraft", "Farcry"]
+favouriteGames.count
+
+//Comprobar si está vacío
+if favouriteGames.isEmpty{
+    print("No hay juegos favoritos")
+}
+
+//Insertar
+favouriteGames.insert("Metal Gear")
+favouriteGames.count
+
+//Para eliminar
+if let removedGame = favouriteGames.remove("Farcry"){
+    print("He eliminado de la lista \(removedGame)")
+}
+
+//Contiene
+if favouriteGames.contains("Metal Gear"){
+    print("Me encanta ese juego")
+}
+
+//Para iterarlos por orden con .sorted()
+for vg in favouriteGames.sorted() {
+    print(vg)
+}
+
+//Reto
+var movies : Set <String> = ["Harry Potter", "Lord of the rings","One Day"]
+
+movies.insert("One Day")
+movies.count
+
+for movie in movies.sorted(){
+    print(movie)
+}
