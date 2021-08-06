@@ -138,3 +138,138 @@ movies.count
 for movie in movies.sorted(){
     print(movie)
 }
+
+//Iteraciones y operaciones sobre conjuntos
+let oddDigits: Set = [1,3,5,7,9]
+let evenDigits: Set = [0,2,4,6,8]
+let primeNumbers: Set = [2,3,5,7]
+
+//A union B = elementos que son o bien de A, o bien de B o de los dos
+oddDigits.union(evenDigits).sorted()
+
+//A intersección B = elementos que son a la vez de A y de B
+oddDigits.intersection(evenDigits)
+evenDigits.intersection(primeNumbers).sorted()
+oddDigits.intersection(primeNumbers).sorted()
+
+// A - B = elementos que son de A pero no de B
+oddDigits.subtracting(primeNumbers).sorted()
+
+// A + B = (A-B) union (B-A)
+oddDigits.symmetricDifference(primeNumbers).sorted()
+
+
+let houseAnimals:Set = ["🐶", "😹"]
+let farmAnimals:Set = ["🐮", "🐔", "🐑", "🐶", "😹"]
+let cityAnimals:Set = ["🐁", "🕊"]
+
+// Subconjunto
+houseAnimals.isSubset(of: farmAnimals)
+
+//SuperConjunto
+farmAnimals.isSuperset(of: houseAnimals)
+
+//A y B son disjuntos si su intersección es vacía
+farmAnimals.isDisjoint(with: cityAnimals)
+
+
+//Reto
+let fruits:Set  = ["🍏","🍓"]
+let vegetables:Set = ["🥕","🥦","🥬","🌶"]
+let favoriteFood:Set = ["🍓","🥗","🍣","🌮","🍏"]
+
+fruits.isSubset(of: favoriteFood)
+fruits.isDisjoint(with: vegetables)
+favoriteFood.isSuperset(of: vegetables)
+
+// Diccionarios [k1:v1, k2:v2, ....]
+
+//Diccionario vacío
+var namesOfIntegers = [Int : String]()
+namesOfIntegers[15] = "quince"
+
+//Vaciar el diccionario
+namesOfIntegers = [:]
+
+var airports: [String: String] = ["YYZ": "Toronto",
+                                  "PTY": "Panamá",
+                                  "PMI": "Palma de Mallorca",
+                                  "DUB": "Dublin"]
+
+
+airports.count
+
+//Para saber si está vacío
+if airports.isEmpty {
+    print("The airports dictionary is empty.")
+} else {
+    print("The airports dictionary isn't empty.")
+}
+
+//Sobreescribir una llave
+airports["LHR"] = "London City Airport"
+airports
+airports["LHR"] = "London Heathrow"
+airports
+
+
+//Para actualizar un valor
+if let oldValue = airports.updateValue("Dublin Airport", forKey: "DUB") {
+    print("The old value for DUB was \(oldValue).")
+}
+
+//Para ver el dato por la llave
+if let airportName = airports["DUB"]{
+    print("El aeropuerto de DUB es: \(airportName)")
+}
+
+//Para eliminar un diccionario
+airports["PTY"] = nil
+airports
+
+if let removedValue = airports.removeValue(forKey: "DUB") {
+    print("The removed airport's name is \(removedValue).")
+} else {
+    print("The airports dictionary doesn't contain a value for DUB.")
+}
+airports
+
+//Reto
+
+var familyMembers: [String: UInt8] = [
+    "Maria": 47,
+    "Victor":53,
+    "Daniela":25,
+    "Pepe":6]
+
+familyMembers.count
+familyMembers["Andrea"] = 28
+familyMembers
+
+familyMembers.count
+
+for (key,value) in familyMembers
+{
+    print("Los miembros de la familia Ruiz son: \(key) - \(value) ")
+}
+
+//Iteración en diccionarios
+for (key, value) in airports {
+    print("\(key) - \(value)")
+}
+
+//Por llaves
+for airportKey in airports.keys{
+    print(airportKey)
+}
+//Por valores
+for airportName in airports.values{
+    print(airportName)
+    
+}
+
+//Para que salgan en arrays las llaves
+let airportKeys = [String](airports.keys.sorted())
+
+//Para que salgan en arrays los valores
+let airportNames = [String](airports.values.sorted())
