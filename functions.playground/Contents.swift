@@ -75,4 +75,18 @@ anotherGreeting(person: "Celilia Acosta", gender: "f", age: 16)
 func greet2(person:String){
     print("Hola \(person)")
 }
- greet2(person: "Hola Andrea Ruiz")
+ greet2(person: "Andrea Ruiz")
+
+//Cuando devuelve algo
+func printAndCount(string : String) -> Int{
+    print(string)
+    return string.count
+}
+
+//No devuelve nada
+func printWithoutCounting(string: String){
+    let _ = printAndCount(string: string)
+}
+
+printAndCount(string: "Hola que tal")
+printWithoutCounting(string: "Hola que tal")
