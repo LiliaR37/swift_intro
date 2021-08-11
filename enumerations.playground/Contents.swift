@@ -14,8 +14,8 @@ enum CompassPoint: String {
     case west
 }
 
-enum Planet {
-    case  venus, earth, mars, jupiter, saturn, uranus, neptune
+enum Planet: Int {
+    case  venus = 1, earth, mars, jupiter, saturn, uranus, neptune
 }
 
 var directionToGo = CompassPoint.east
@@ -75,4 +75,33 @@ case let .upc(numberSystem, manufacturer, product, check):
     print("UPC: \(numberSystem), \(manufacturer), \(product), \(check).")
 case let .qrCode(productCode):
     print("QR: \(productCode)")
+}
+
+//Enumeradores con raw values
+enum ASCIIControlCharacter: Character{
+    case tab = "\t"
+    case lineFeed = "\n"
+    case carriageReturn = "\r"
+}
+
+
+
+let earthOrder = Planet.earth.rawValue
+
+let northDirection = CompassPoint.north.rawValue
+
+//Este valor es un optinal hay que estar seguro
+let possiblePlanet = Planet(rawValue: 5)
+
+let planetPosition = 3
+
+if let anyPlanet = Planet(rawValue: planetPosition){
+    switch anyPlanet{
+        case .earth:
+            print("La tierra es segura")
+        default:
+            print("No es seguro ir a este planeta")
+    }
+}else{
+    print("El planeta indicado no existe... ")
 }
