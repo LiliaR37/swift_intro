@@ -81,3 +81,58 @@ let digitNames = [0:"Cero", 1:"Uno", 2:"Dos", 3:"Tres", 4:"Cuatro",
  
  */
 
+//Capturar Valores
+
+func makeIncrementer(forIncrement amount: Int) -> () -> Int {
+    var runningTotal = 0
+    func incrementer() -> Int {
+        runningTotal += amount
+        return runningTotal
+    }
+    return incrementer
+}
+
+let incrementByTen = makeIncrementer(forIncrement: 10)
+incrementByTen()
+incrementByTen()
+incrementByTen()
+
+let incrementBySeven = makeIncrementer(forIncrement: 7)
+incrementBySeven()
+
+incrementByTen()
+
+
+var completionHandlers: [() -> Void] = []
+
+func someFunctionWithEscapingClosure(completionHandler: @escaping () -> Void){
+    completionHandlers.append(completionHandler)
+}
+completionHandlers.count
+
+func someFunctionWithNonEscapingClosure(closure: () -> Void){
+    closure()
+}
+
+
+class SomeClass{
+    var x = 10
+    func doSomething(){
+        someFunctionWithEscapingClosure {
+            self.x = 100
+        }
+        someFunctionWithNonEscapingClosure {
+            x = 200
+        }
+    }
+}
+
+let instance = SomeClass()
+print(instance.x)
+
+instance.doSomething()
+print(instance.x)
+
+completionHandlers.count
+completionHandlers.first?()
+print(instance.x)
