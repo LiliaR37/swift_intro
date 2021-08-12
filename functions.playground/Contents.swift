@@ -95,10 +95,10 @@ printWithoutCounting(string: "Hola que tal")
 func minMax(array:[Int]) -> (min: Int, max: Int){
     
   
-    
     var currentMin = array[0]
     var currentMax = array[0]
     
+    //Rcorrer el array
     for value in array[1..<array.count]{
         if value < currentMin{
             currentMin = value
@@ -110,6 +110,7 @@ func minMax(array:[Int]) -> (min: Int, max: Int){
     return (currentMin, currentMax)
 }
 
+//Creacion de una variable por devolver una tupla
 let bounds = minMax(array: [6,3,-8,3,1,9,5,15,-9])
 print("Los valores se hallan entre \(bounds.min) y \(bounds.max)")
 
@@ -214,3 +215,6 @@ while value != 0 {
     value = moveNearerZero(value)
 }
 print("Cero!!!!!!")
+
+
+
